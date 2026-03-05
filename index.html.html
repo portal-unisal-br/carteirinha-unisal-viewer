@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RM.Rpt.Reports/Anonymous/RptReportViewerAnonymous.aspx?GUID=3c7e2a91-9f4b-4c6a-8d2f-5e1a7b9d4c63&anonymous=true</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --unisal-blue: #0a2a5e;
+        }
+        body {
+            background: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background: var(--unisal-blue);
+            color: white;
+            padding: 12px 0;
+            border-bottom: 4px solid #ffcc00;
+        }
+        .logo {
+            max-height: 55px;
+        }
+        .viewer-container {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .toolbar {
+            background: #f1f1f1;
+            border-bottom: 1px solid #ddd;
+            padding: 8px 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .report-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--unisal-blue);
+        }
+        .pdf-frame {
+            width: 100%;
+            height: 85vh;
+            border: none;
+        }
+        .info-box {
+            background: #f8f9fa;
+            border-left: 5px solid var(--unisal-blue);
+        }
+        .footer {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER - igual ao portal UNISAL -->
+    <header class="header">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center gap-3">
+                    <img src="https://portal.unisal.br/Nova_Tela_Login/img/logo.png" 
+                         alt="UNISAL" class="logo">
+                    <div>
+                        <h5 class="mb-0 fw-bold">Centro Universitário Salesiano de São Paulo</h5>
+                        <small>Corpore.Net • RM Rpt Reports</small>
+                    </div>
+                </div>
+                <div class="text-end">
+                    <span class="badge bg-warning text-dark px-3 py-2">
+                        <i class="fas fa-lock"></i> Acesso Anônimo
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container py-4">
+        <!-- TÍTULO DO RELATÓRIO -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div>
+                <h1 class="report-title">
+                    <i class="fas fa-id-card me-2"></i>
+                    Carteirinha Estudantil - Visualizador
+                </h1>
+                <p class="text-muted mb-0">
+                    GUID: 3c7e2a91-9f4b-4c6a-8d2f-5e1a7b9d4c63 | anonymous=true
+                </p>
+            </div>
+            <div>
+                <span class="badge bg-success px-3 py-2">
+                    <i class="fas fa-check-circle"></i> Documento Ativo
+                </span>
+            </div>
+        </div>
+
+        <!-- INFORMAÇÕES DO ALUNO (como no visualizador oficial) -->
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <div class="card info-box">
+                    <div class="card-body">
+                        <div class="row text-center text-md-start">
+                            <div class="col-md-3">
+                                <strong>Matrícula</strong><br>
+                                <span class="fs-4 text-primary">220019539</span>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Validade</strong><br>
+                                <span class="fs-4">30/06/2026</span>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Curso</strong><br>
+                                Direito
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Campus</strong><br>
+                                Campinas - São José
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row text-center text-md-start">
+                            <div class="col-md-3">
+                                <strong>Nome</strong><br>
+                                JULIANA DE LIMA MILASSENO
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Emissão</strong><br>
+                                05/11/2025
+                            </div>
+                            <div class="col-md-3">
+                                <strong>Status</strong><br>
+                                <span class="text-success fw-bold">Ativo</span>
+                            </div>
+                            <div class="col-md-3">
+                                <strong>CPF</strong><br>
+                                397.309.908-16
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- VISUALIZADOR DO PDF (igual ao RptReportViewer) -->
+        <div class="viewer-container">
+            <!-- Toolbar fake (igual ao relatório Corpore) -->
+            <div class="toolbar">
+                <button class="btn btn-sm btn-outline-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button class="btn btn-sm btn-outline-primary" onclick="document.getElementById('pdfFrame').contentWindow.print()">
+                    <i class="fas fa-file-export"></i> Exportar PDF
+                </button>
+                <div class="ms-auto text-muted small d-flex align-items-center gap-2">
+                    <i class="fas fa-qrcode"></i> QR Code verificável
+                    <span class="badge bg-dark">Cod. Identificador: 3c7e2a91-9f4b-4c6a-8d2f-5e1a7b9d4c63</span>
+                </div>
+            </div>
+
+            <!-- PDF EMBED -->
+            <iframe id="pdfFrame"
+                    src="Carteirinha - Juliana de Lima Milasseno_220019539.pdf"
+                    class="pdf-frame"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="footer mt-4">
+            UNISAL • Centro Universitário Salesiano de São Paulo • 
+            Documento gerado em <span id="dataAtual"></span> • 
+            Este é um visualizador independente (HTML) com aparência idêntica ao portal oficial.
+        </div>
+    </div>
+
+    <script>
+        // Data atual no rodapé
+        document.getElementById('dataAtual').textContent = new Date().toLocaleDateString('pt-BR');
+        
+        // Mensagem se o PDF não carregar
+        window.onload = function() {
+            const frame = document.getElementById('pdfFrame');
+            frame.onerror = function() {
+                alert("❌ PDF não encontrado!\n\nSalve o arquivo como:\nCarteirinha - Juliana de Lima Milasseno_220019539.pdf\nna mesma pasta do index.html");
+            };
+        };
+    </script>
+</body>
+</html>
