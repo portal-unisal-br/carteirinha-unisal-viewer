@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carteirinha UNISAL</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #f0f0f0; /* Fundo neutro para centralizar */
+        }
+        .card {
+            width: 350px; /* Largura aproximada da carteirinha */
+            height: 550px; /* Altura aproximada */
+            background: #001f4d; /* Azul escuro UNISAL */
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .photo {
+            width: 100px;
+            height: 120px;
+            border: 2px solid white;
+            background: white;
+            object-fit: cover;
+        }
+        .info-top {
+            text-align: right;
+        }
+        .logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .matricula, .validade {
+            background: white;
+            color: black;
+            padding: 2px 8px;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+        .name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 15px 0;
+        }
+        .details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 20px;
+            font-size: 0.85rem;
+        }
+        .label {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .value {
+            font-weight: normal;
+        }
+        .qr-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr {
+            width: 80px;
+            height: 80px;
+        }
+        .barcode {
+            height: 30px;
+            width: 200px;
+            margin: 10px auto;
+            background: repeating-linear-gradient(90deg, black, black 2px, white 2px, white 4px);
+        }
+        .cod {
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <img class="photo" src="https://via.placeholder.com/100x120?text=Foto" alt="Foto do aluno">
+            <div class="info-top">
+                <img class="logo" src="https://portal.unisal.br/Nova_Tela_Login/img/logo.png" alt="UNISAL Logo">
+                <div class="matricula">Matrícula 220019539</div>
+                <div class="validade">Validade 30/06/2026</div>
+            </div>
+        </div>
+        <div class="name">JULIANA DE LIMA MILASSENO</div>
+        <div class="details">
+            <div class="label">Curso</div>
+            <div class="value">Direito</div>
+            <div class="label">Unidade</div>
+            <div class="value">Campinas</div>
+            <div class="label">Campus</div>
+            <div class="value">Unidade Campinas - São José</div>
+            <div class="label">Nível de Ensino</div>
+            <div class="value">Graduação</div>
+            <div class="label">Data de Emissão</div>
+            <div class="value">05/11/2025</div>
+            <div class="label">Status</div>
+            <div class="value">Ativo</div>
+            <div class="label">Data de Nascimento</div>
+            <div class="value">18/08/1992</div>
+            <div class="label">Identidade</div>
+            <div class="value">433104170</div>
+            <div class="label">CPF</div>
+            <div class="value">39730990816</div>
+        </div>
+        <div class="qr-section">
+            <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=Matricula:220019539|Nome:JULIANA%20DE%20LIMA%20MILASSENO|Validade:30/06/2026|Cod:3c7e2a91-9f4b-4c6a-8d2f-5e1a7b9d4c63" alt="QR Code">
+            <div class="barcode"></div>
+            <div class="cod">Cod. Identificador: 3c7e2a91-9f4b-4c6a-8d2f-5e1a7b9d4c63</div>
+        </div>
+    </div>
+</body>
+</html>
